@@ -1,4 +1,4 @@
-// Copyright 2024 Marina Usova
+// Copyright 2026 Ksenia Kh 
 
 #include <stdexcept>
 #include "../lib_vector/vector.h"
