@@ -3,9 +3,9 @@
 #ifndef LIB_VECTOR_VECTOR_H_
 #define LIB_VECTOR_VECTOR_H_
 
-#include "../lib_vector/memdata.h"
 #include <algorithm>
 #include <cstddef>
+#include "../lib_vector/memdata.h"
 
 template <typename T>
 class Vector {
