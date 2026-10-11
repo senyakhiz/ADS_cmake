@@ -18,10 +18,10 @@ template <typename T> class MemData {
 
  public:
     explicit MemData(size_t size = 0);
-    MemData(std::initializer_list<T>);
-    MemData(const T*, size_t);
-    MemData(const MemData&);
-    MemData(MemData&&) noexcept;
+    MemData(std::initializer_list<T> arr);
+    MemData(const T* arr, size_t size);
+    MemData(const MemData& other);
+    MemData(MemData&& other) noexcept;
     ~MemData();
 
     bool is_empty() const noexcept;
@@ -31,12 +31,12 @@ template <typename T> class MemData {
     size_t capacity() const noexcept;
     const T* const data() const noexcept;
 
-    void set_memory(size_t) noexcept;
+    void set_memory(size_t size) noexcept;
     void reset_memory(size_t size, size_t start_index = 0) noexcept;
     void clear_memory() noexcept;
 
-    MemData& operator=(const MemData&) noexcept;
-    MemData& operator=(MemData&&) noexcept;
+    MemData& operator=(const MemData& other) noexcept;
+    MemData& operator=(MemData&& other) noexcept;
 
     void set_size_for_test(size_t new_size);
 

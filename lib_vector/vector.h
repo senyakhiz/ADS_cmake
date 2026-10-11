@@ -15,10 +15,10 @@ class Vector {
 
  public:
     explicit Vector(size_t size = 0);
-    Vector(std::initializer_list<T>);
-    Vector(T*, size_t);
-    Vector(const Vector&);
-    Vector(Vector&&) noexcept;
+    Vector(std::initializer_list<T> arr);
+    Vector(T* arr, size_t size);
+    Vector(const Vector& other);
+    Vector(Vector&& other) noexcept;
     ~Vector() = default;
 
     bool is_empty() const noexcept;
@@ -46,11 +46,11 @@ class Vector {
     void pop_back();
     void erase(size_t);
 
-    Vector& operator=(const Vector&) noexcept;
-    Vector& operator=(Vector&&) noexcept;
+    Vector& operator=(const Vector& other) noexcept;
+    Vector& operator=(Vector&& other) noexcept;
 
-    T operator[](size_t) const noexcept;
-    T& operator[](size_t) noexcept;
+    T operator[](size_t index) const noexcept;
+    T& operator[](size_t index) noexcept;
 
     void push_front(const std::initializer_list<T>& values);
     void push_back(const std::initializer_list<T>& values);
