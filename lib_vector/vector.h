@@ -3,6 +3,8 @@
 #ifndef LIB_VECTOR_VECTOR_H_
 #define LIB_VECTOR_VECTOR_H_
 
+#include "../lib_vector/memdata.h"
+
 template <typename T>
 class Vector {
     MemData<T> _mem;         // хранилище данных + размер  + вместимость
