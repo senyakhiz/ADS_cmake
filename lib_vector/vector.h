@@ -7,47 +7,47 @@
 
 template <typename T>
 class Vector {
-    MemData<T> _mem;         // хранилище данных + размер  + вместимость
-    size_t _front;        // индекс первого элемента
-    size_t _back;         // индекс последнего элемента
+    MemData<T> _mem;
+    size_t _front;
+    size_t _back;
 public:
-    Vector(size_t size = 0);                 // конструктор по размеру + по умолчанию
-    Vector(std::initializer_list<T>);   // конструктор по списку инициализации
-    Vector(T*, size_t);                 // конструктор инициализации
-    Vector(const Vector&);                   // конструктор копирования
-    Vector(Vector&&) noexcept;                        // конструктор с move-семантикой
-    ~Vector() = default;                     // деструктор
+    Vector(size_t size = 0);
+    Vector(std::initializer_list<T>);
+    Vector(T*, size_t);
+    Vector(const Vector&);
+    Vector(Vector&&) noexcept;
+    ~Vector() = default;
 
-    bool is_empty() const noexcept;          // проверка на пустоту
-    bool is_full() const noexcept;           // проверка на переполнение
+    bool is_empty() const noexcept;
+    bool is_full() const noexcept;
 
-    size_t size() const noexcept;            // геттер размера
-    size_t capacity() const noexcept;        // геттер вместимости
-    T front() const;                    // геттер первого элемента
-    T back() const;                     // геттер последнего элемента
+    size_t size() const noexcept;
+    size_t capacity() const noexcept;
+    T front() const;
+    T back() const;
 
-    T& front();                         // сеттер первого элемента
-    T& back();                          // сеттер последнего элемента
+    T& front();
+    T& back();
 
     size_t get_real_index(size_t front, size_t pos, size_t capacity);
     void resize_and_rearrange();
 
-    void push_front(const T&) noexcept;               // вставка элемента в начало
-    void push_back(const T&) noexcept;                // вставка элемента в конец
-    void insert(const T&, size_t);                    // вставка элемента по позиции
+    void push_front(const T&) noexcept;
+    void push_back(const T&) noexcept;
+    void insert(const T&, size_t);
 
     bool should_shrink() const noexcept;
     void shrink_to_fit() noexcept;
 
-    void pop_front();                               // удаление элемента из начала
-    void pop_back();                                // удаление элемента из конца
-    void erase(size_t);                             // удаление элемента по позиции
+    void pop_front();
+    void pop_back();
+    void erase(size_t);
 
-    Vector& operator=(const Vector&) noexcept;      // оператор присваивания
-    Vector& operator=(Vector&&) noexcept;           // оператор присваивания с move-семантикой
+    Vector& operator=(const Vector&) noexcept;
+    Vector& operator=(Vector&&) noexcept;
 
-    T operator[](size_t) const noexcept;       // оператор обращения по индексу константный
-    T& operator[](size_t) noexcept;            // оператор обращения по индексу
+    T operator[](size_t) const noexcept;
+    T& operator[](size_t) noexcept;
 
     void push_front(const std::initializer_list<T>& values);
     void push_back(const std::initializer_list<T>& values);
@@ -58,9 +58,9 @@ public:
     template <typename U> friend void shuffle(Vector<U>& vec);
 
     template <typename U>
-    friend std::ostream& operator<<(std::ostream&, const Vector<U>&);     // вывод
+    friend std::ostream& operator<<(std::ostream&, const Vector<U>&);
     template <typename U>
-    friend std::istream& operator>>(std::istream&, Vector<U>&);           // ввод
+    friend std::istream& operator>>(std::istream&, Vector<U>&);
 };
 
 #endif  // LIB_VECTOR_VECTOR_H_
