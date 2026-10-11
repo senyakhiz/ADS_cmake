@@ -15,7 +15,8 @@ template <typename T> class MemData {
     T* _data;
     size_t _size;
     size_t _capacity;
-public:
+
+ public:
     MemData(size_t size = 0);
     MemData(std::initializer_list<T>);
     MemData(const T*, size_t);
@@ -30,7 +31,7 @@ public:
     size_t capacity() const noexcept;
     const T* const data() const noexcept;
 
-    void set_memory(size_t) noexcept;
+    void set_memory(static_cast<size_t>) noexcept;
     void reset_memory(size_t size, size_t start_index = 0) noexcept;
     void clear_memory() noexcept;
 
@@ -42,4 +43,4 @@ public:
     template <typename U> friend class Vector;
 };
 
-#endif  // LIB_VECTOR_VECTOR_H_
+#endif  // LIB_VECTOR_MEMDATA_H_

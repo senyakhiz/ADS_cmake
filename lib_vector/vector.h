@@ -4,13 +4,15 @@
 #define LIB_VECTOR_VECTOR_H_
 
 #include "../lib_vector/memdata.h"
+#include <algorithm>
 
 template <typename T>
 class Vector {
     MemData<T> _mem;
     size_t _front;
     size_t _back;
-public:
+
+ public:
     Vector(size_t size = 0);
     Vector(std::initializer_list<T>);
     Vector(T*, size_t);

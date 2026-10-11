@@ -4,6 +4,7 @@
 #include <stdexcept>
 #include <algorithm>
 #include <random>
+#include <utility>
 
 template <typename T>
 Vector<T>::Vector(size_t size) {
@@ -396,7 +397,6 @@ void shuffle(Vector<T>& vec) {
         size_t j = dist(gen);
         std::swap(vec[i], vec[j]);
     }
-
 }
 
 template <typename T>
