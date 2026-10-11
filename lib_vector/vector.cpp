@@ -1,10 +1,10 @@
 // Copyright 2026 Ksenia Kh
 
-#include "../lib_vector/vector.h"
 #include <stdexcept>
 #include <algorithm>
 #include <random>
 #include <utility>
+#include "../lib_vector/vector.h"
 
 template <typename T>
 Vector<T>::Vector(size_t size) {

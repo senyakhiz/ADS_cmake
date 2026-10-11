@@ -5,6 +5,7 @@
 
 #include "../lib_vector/memdata.h"
 #include <algorithm>
+#include <cstddef>
 
 template <typename T>
 class Vector {
@@ -49,7 +50,7 @@ class Vector {
     Vector& operator=(Vector&&) noexcept;
 
     T operator[](size_t) const noexcept;
-    T& operator[](size_t) noexcept;
+    T& operator[](static_cast<size_t>) noexcept;
 
     void push_front(const std::initializer_list<T>& values);
     void push_back(const std::initializer_list<T>& values);
