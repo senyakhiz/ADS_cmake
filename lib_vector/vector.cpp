@@ -313,7 +313,7 @@ T Vector<T>::operator[](size_t index) const noexcept {
     return _mem._data[(_front + index) % _mem._capacity];
 }
 template <typename T>
-T& Vector<T>::operator[](static_cast<size_t> index) noexcept {
+T& Vector<T>::operator[](size_t index) noexcept {
     return _mem._data[(_front + index) % _mem._capacity];
 }
 

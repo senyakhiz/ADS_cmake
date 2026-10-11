@@ -14,7 +14,7 @@ class Vector {
     size_t _back;
 
  public:
-    Vector(size_t size = 0);
+    explicit Vector(size_t size = 0);
     Vector(std::initializer_list<T>);
     Vector(T*, size_t);
     Vector(const Vector&);
@@ -50,7 +50,7 @@ class Vector {
     Vector& operator=(Vector&&) noexcept;
 
     T operator[](size_t) const noexcept;
-    T& operator[](static_cast<size_t>) noexcept;
+    T& operator[](size_t) noexcept;
 
     void push_front(const std::initializer_list<T>& values);
     void push_back(const std::initializer_list<T>& values);

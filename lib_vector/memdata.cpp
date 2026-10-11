@@ -96,7 +96,7 @@ const T* const MemData<T>::data() const noexcept {
 }
 
 template <typename T>
-void MemData<T>::set_memory(static_cast<size_t> new_capacity) noexcept {
+void MemData<T>::set_memory(size_t new_capacity) noexcept {
     T* new_data = nullptr;
     if (new_capacity > 0) {
         new_data = new T[new_capacity];
