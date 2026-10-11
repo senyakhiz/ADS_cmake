@@ -1,7 +1,7 @@
 // Copyright 2026 Ksenia Kh
 
 #include <stdexcept>
-#include "../lib_vector/Memdata.h"\
+#include "../lib_vector/memdata.h"
 
 #include <algorithm>
 #include <cstring>
@@ -43,8 +43,8 @@ template <typename T>
 MemData<T>::MemData(const T* arr, size_t size) {
     _size = size;
     _capacity = calculate_capacity(size);
-    if (_capasity > 0) {
-        _data = new T[_capacity(size)];
+    if (_capacity > 0) {
+        _data = new T[_capacity];
         for (size_t i = 0; i < _size; ++i) {
             _data[i] = arr[i];
         }
@@ -55,7 +55,7 @@ MemData<T>::MemData(const MemData& other) {
     _size = other._size;
     _capacity = other._capacity;
     if (_capacity > 0) {
-        _data = new T[_capacity(size)];
+        _data = new T[_capacity];
         for (size_t i = 0; i < _size; ++i) {
             _data[i] = other._data[i];
         }
@@ -117,7 +117,7 @@ void MemData<T>::reset_memory(size_t size, size_t start_index) noexcept {
         elements_to_copy = std::min(_size - start_index, size);
     }
 
-    double* new_data = nullptr;
+    T* new_data = nullptr;
     if (new_capacity > 0) {
         new_data = new T[new_capacity];
     }
