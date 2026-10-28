@@ -1,6 +1,5 @@
 // Copyright 2026 Ksenia Kh
 
-
 #include "../lib_vector/memdata.h"
 #include <stdexcept>
 #include <algorithm>
@@ -18,7 +17,8 @@ template <typename T>
 MemData<T>::MemData(size_t size) {
     if (size == 0) {
         _data = nullptr;
-    } else {
+    }
+    else {
         _data = new T[calculate_capacity(size)];
     }
     _size = 0;
@@ -33,7 +33,8 @@ MemData<T>::MemData(std::initializer_list<T> list) {
         for (size_t i = 0; i < _size; ++i) {
             _data[i] = list.begin()[i];
         }
-    } else {
+    }
+    else {
         _data = nullptr;
     }
 }

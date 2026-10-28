@@ -16,7 +16,7 @@ template <typename T> class MemData {
     size_t _size;
     size_t _capacity;
 
- public:
+public:
     explicit MemData(size_t size = 0);
     MemData(std::initializer_list<T> arr);
     MemData(const T* arr, size_t size);

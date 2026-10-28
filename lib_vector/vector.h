@@ -13,7 +13,7 @@ class Vector {
     size_t _front;
     size_t _back;
 
- public:
+public:
     explicit Vector(size_t size = 0);
     Vector(std::initializer_list<T> arr);
     Vector(T* arr, size_t size);
