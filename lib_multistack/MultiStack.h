@@ -15,7 +15,7 @@ class MultiStack {
     size_t* _R;
     size_t* _top;
 
-public:
+ public:
     MultiStack(size_t size, size_t count);
     MultiStack(const MultiStack& other);
     ~MultiStack();
