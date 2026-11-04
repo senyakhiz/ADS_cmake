@@ -9,7 +9,7 @@ template <class T>
 class MultiStack {
     size_t _count;
     size_t _size;
-    size_t val;
+    size_t _val;
     T* _data;
     size_t* _L;
     size_t* _R;
@@ -30,7 +30,7 @@ public:
     bool is_emphy(size_t) const noexcept;
     bool is_full(size_t) const noexcept;
 
-    void reset_memory(size_t size) noexcept;
+    void reset(size_t size) noexcept;
 };
 
 #endif  // LIB_MULTISTACK_MULTISTACK_H_
