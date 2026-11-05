@@ -10,7 +10,7 @@ TStackOnMass<T>::TStackOnMass(size_t size) : _size(size), _top(0) {
 }
 
 template <class T>
-TStackOnMass<T>::TStackOnMass(const TStackOnMass& other) : 
+TStackOnMass<T>::TStackOnMass(const TStackOnMass& other) :
     _size(other._size), _top(other._top) {
     _data = new T[_size];
     for (size_t i = 0; i < _top; ++i) {
@@ -78,9 +78,4 @@ bool TStackOnMass<T>::check_breckets(std::string expression) {
         }
     }
     return st.is_cuptu();
-}
-
-template <class T>
-bool check_breckets(std::string expression) {
-    
 }

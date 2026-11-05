@@ -10,7 +10,7 @@ class Queue {
     size_t _front;
     size_t _back;
  public:
-     Queue(size_t size);
+     explicit Queue(size_t size);
      Queue(const Queue& other);
      ~Queue();
 

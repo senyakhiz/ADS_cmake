@@ -4,6 +4,7 @@
 #define LIB_STACK_ON_MASS_STACK_ON_MASS_H_
 
 #include <iostream>
+#include <string>
 
 template <class T>
 class TStackOnMass {
@@ -12,7 +13,7 @@ class TStackOnMass {
     size_t _top;
 
  public:
-     TStackOnMass(size_t size);
+     explicit TStackOnMass(size_t size);
      TStackOnMass(const TStackOnMass& other);
      ~TStackOnMass();
 
@@ -25,6 +26,5 @@ class TStackOnMass {
 
      bool check_breckets(std::string expression);
 };
-
 
 #endif  // LIB_STACK_ON_MASS_STACK_ON_MASS_H_

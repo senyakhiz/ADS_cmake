@@ -5,7 +5,7 @@
 #include <stdexcept>
 
 template <class T>
-Queue<T>::Queue(size_t size) : 
+Queue<T>::Queue(size_t size) :
     _size(size + 1),
     _data(new T[size + 1]),
     _front(0),
@@ -13,7 +13,7 @@ Queue<T>::Queue(size_t size) :
 }
 
 template <class T>
-Queue<T>::Queue(const Queue& other): 
+Queue<T>::Queue(const Queue& other) :
     _size(other._size),
     _data(new T[other._size]),
     _front(other._front),

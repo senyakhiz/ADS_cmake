@@ -11,7 +11,7 @@ MultiStack<T>::MultiStack(size_t count, size_t size) : _count(0), _size(size) {
 }
 
 template <class T>
-MultiStack<T>::MultiStack(const MultiStack& other) : 
+MultiStack<T>::MultiStack(const MultiStack& other) :
     _count(other.count), _size(other._size), {
     _data = new T[_size];
     _top = new T[_count];
@@ -76,6 +76,4 @@ bool MultiStack<T>::is_full(size_t number) const noexcept {
 }
 
 template <class T>
-void MultiStack<T>::reset(size_t size) noexcept {
-    
-}
+void MultiStack<T>::reset(size_t size) noexcept {}
